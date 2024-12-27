@@ -1,6 +1,7 @@
 #include<stdio.h>
 int initialize(int arr[3][3]);
 int update(int arr[3][3]);
+int delete(int arr[3][3]);
 int initialize(int arr[3][3])
 {
     for (int i = 0; i < 3; i++)
@@ -21,11 +22,19 @@ int update(int arr[3][3])
     scanf("%d",&updatedelement);
     arr[ij[0]][ij[1]]=updatedelement;
 }
+int delete(int arr[3][3])
+{
+    printf("Enter ixj to delete: ");
+    int ij[2];
+    scanf("%d %d",&ij[0],&ij[1]);
+    arr[ij[0]][ij[1]]=0;
+}
 int main()
 {
     int arr[3][3];
     initialize(arr);
     update(arr);
+    delete(arr);
     printf("%d",arr[2][2]);
     return 0;
 }
